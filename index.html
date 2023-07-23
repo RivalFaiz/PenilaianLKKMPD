@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LKMMPD</title>
     <link rel="icon" href="gmbr/logolkm.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="conAll">
     
         <div class="container">
+
+            
+            
+
         
             <section class="foto">
                 <a href="#lkmmpd">
@@ -37,25 +42,48 @@
                 <img src="gmbr/logolkm.jpg" alt="LOGO LKMMPD">
                 
             </section>
+            <a href="#">
+
+                <div class="back">    
+                    <i class="fa-solid fa-arrow-left"></i>                    
+                </div>
+            </a>
+
+            
+            <div class="wraper" id="Individu">
+                <a class="KELOMPOK" href="#Individu">        
+                    <div class="individu">Penilaian Individu</div>
+                </a>
+            
+                <a href="https://docs.google.com/spreadsheets/d/1QO25o4lOkD8w9kxgbNmm0MJolLD0GfvP3IW9jlLyxtc/edit?usp=drive_link" target="_blank">        
+                    <div class="kelompok">Penilaian Kelompok</div>
+                </a>
+    
+                <a href="https://docs.google.com/spreadsheets/d/1U-yhbOKAFv4ex7vY8fqIymwNogCSugIo-JRzwqGRIW8/edit?usp=drive_link" target="_blank">        
+                    <div class="H">Penilaian Hari-H</div>
+                </a>            
+            </div>
+
+
+            <div class="wraperNext" id="wraperNext">                
+                <a class="KELOMPOK" href="https://docs.google.com/spreadsheets/d/10J_o4VHl0Ergh6UUKtAXGQLydZ5raaazJe3uMggUNBk/edit?usp=drive_link" target="_blank">        
+                    <div class="individu">Individu : Sebelum Hari H</div>
+                </a>
+                
+                <a href="#" target="_blank">        
+                    <div class="kelompok">Pretest, Postest ,Resume & CoCard</div>
+                </a>
+                
+                <a href="#" target="_blank">        
+                    <div class="H">Hukuman</div>
+                </a>                
+            </div>
             
             
-            <a class="KELOMPOK" href="https://docs.google.com/spreadsheets/d/10J_o4VHl0Ergh6UUKtAXGQLydZ5raaazJe3uMggUNBk/edit#gid=0" target="_blank">
-        
-                <div class="individu">Penilaian Individu</div>
-            </a>
-        
-            <a href="#" target="_blank">
-        
-                <div class="kelompok">Penilaian Kelompok</div>
-            </a>
-            <a href="#" target="_blank">
-        
-                <div class="H">Penilaian Hari-H</div>
-            </a>
-        
         
         </div>
     </div>
+
     
 
 </body>
@@ -78,6 +106,32 @@
         background-size: cover;
         box-sizing: border-box;
     }
+    .container>a{
+        position: absolute;
+        top: 15px;
+        left: -15px;
+        color:rgba(255,255,255,0.7);
+        padding: 10px 10px 10px 10px;
+        aspect-ratio: 1;
+        background-color: #3961aa;  
+        font-size: 17px;     
+        z-index: 100; 
+        border-radius: 1.3vh;
+        transition: left 0.2s ease-in;
+    }
+    
+
+    .container>a:hover{
+        background-color: #293c8a;
+
+    }
+    .container>a:active{
+        background-color: #181e40;
+
+    }
+
+
+
     .conAll{
 
         color: white;
@@ -93,20 +147,16 @@
         color: white;
     }
     hr{
-        border: min(1px,0.2vh) solid white;
+        border: 0.5px solid white;
         border-radius: 50px;
         width: clamp(100px,70vw,800px);
         margin-top: min(50px,5vh);
-        margin-bottom: min(30px,3vh);
-
-
-
     }
 
     .container{
         display: flex;
         margin: 0 auto;
-        border: 2px solid #ffffff;
+        border: 0.7px solid #ffffff;
         width: clamp(100px,70vw,800px);
         height: 80vh;
         flex-direction: column;
@@ -116,13 +166,29 @@
         align-items: center;
         border-radius: 20px;
         box-shadow: 2px 4px 10px black;
+        position: relative;
+        overflow: hidden;
 
     }
-    .container >a{
+
+    .wraper{
+        width: clamp(100px,70vw,800px);
+        height: max-content;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 2vh;
+        left: 0;
+        right: 0;
+        transition: 0.2s ease;
+    }
+
+    .container>.wraper>a{
         width: 100%;
-        height: 70px;
+        height: 9vh;
         background-color: #7762ea;
-        border-radius: 50px;
+        border-radius: 3.8vh;
         margin-top: min(10px,2vh);
         margin-bottom: min(10px,2vh);
         display: flex;
@@ -133,29 +199,83 @@
         transition: 0.2s;
         background-image: none;
         background-position: center;
-        font-size: clamp(10px,3vh,17px);
+        font-size: clamp(10px,2.5vw,15px);
         font-weight: 300;
-
+        white-space: pre-wrap; /* Memungkinkan pemisahan kata jika tidak cukup ruang di satu baris */
+        word-wrap: break-word;
     }
-    .container>a:hover{
+
+    .wraper:target{
+        left: -100%;
+    }
+    .wraper:target + .wraperNext{
+        left: 0;
+    }
+
+
+    .container>.wraper>a:hover{
         box-shadow: none;
         transition: 0.2s;
         transform: translateY(8px);
+        background-color: #6453c4;
     }
-    .container>a:active{
-        background-color:#601A35;
+    .container>.wraper>a:active{
+        background-color:#531a60;
+        background-position: center;
+    }
+    .wraperNext{
+        width: clamp(100px,70vw,800px);
+        height: max-content;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        bottom: 2vh;
+        left: 100%;
+        transition: 0.2s ease;
+    }
+
+    .container >.wraperNext>a{
+        width: 100%;
+        height: 9vh;
+        background-color: #7762ea;
+        border-radius: 3.8vh;
+        margin-top: min(10px,2vh);
+        margin-bottom: min(10px,2vh);
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        box-shadow: 0px min(9px,3vh)  rgb(63, 40, 68);
+        cursor: pointer;
+        transition: 0.2s;
+        background-image: none;
+        background-position: center;
+        font-size: clamp(10px,2.5vw,15px);
+        font-weight: 300;
+        white-space: pre-wrap; /* Memungkinkan pemisahan kata jika tidak cukup ruang di satu baris */
+        word-wrap: break-word;
+    }
+
+    .container>.wraperNext>a:hover{
+        box-shadow: none;
+        transition: 0.2s;
+        transform: translateY(8px);
+        background-color: #6453c4;
+    }
+    .container>.wraperNext>a:active{
+        background-color:#531a60;
         background-position: center;
         transition: 0;
     }
     .container>.foto{
-
-        height: 45%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-self: start;
-        position: relative;
-
+        position: absolute;
+        top: 3vh;
+        right: 0;
+        left: 0;
     }
     .conImgHover img{
         width: 17vh;
@@ -173,19 +293,17 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
         background-color: rgba(5, 5, 5, 0.2);
-    
-        transform: scale(1.2);
+        transform: scale(0);
         transition:transform 0.2s;
-
+        border-radius: 50%;        
     }
     .conImgHover:hover .imgHover{
-        transform: scale(1.2);
+        transform: scale(1);
         transition: transform 0.2s ease-out;
     }
-    .conImgHover:hover  img{
-        transform: scale(1.2);
+    .conImgHover:hover img{
+        transform: scale(1.1);
         transition: 0.2s ease-in;
     }
     .conImgHover:active .imgHover{
@@ -212,11 +330,11 @@
         margin-top: min(3px,1vh);
         align-items: center;
     }
-    section>section>:first-child{
-        font-size: min(30px);
+    section>section>div:first-child{
+        font-size: min(25px);
         font-weight: 700;
     }
-    section>section>:nth-child(2){
+    section>section>div:nth-child(2){
         font-size: 15px;
         font-weight: 300;
     }
@@ -247,92 +365,234 @@
         bottom: 0;
         width: auto;
         height: auto;
-      
       }
       .overlay:target img{
         width:50vw;
         transition: 0.2s ease-in;
         pointer-events: none;
       }
+
     
-      .kalis{
-        font-size: 50%;
-        font-weight:300 ;
+      .LKMMPD{
+        font-size: clamp(15px,3vw,20px);
+        font-weight:500 ;
       }
       
       
       
       
       
-    @media (min-height:100px) and (max-height: 300px){
+    @media (min-height:340px) and (max-height: 427px){
         hr{
             display: none;
         }
         .conImgHover{
             display: none;
         }
+        section>section>div:first-child{
+            font-size: 30px;
+            font-weight: 700;
+        }
+        section>section>div:nth-child(2){
+            font-size: 20px;
+            font-weight: 300;
+        }
+        .container >.wraper>a{
+            font-size: 10px;
+            height: 100%;
+        }
+        .container >.wraperNext>a{
+            font-size: 10px;
+            height: 100%;
+        }
+        .wraper{
+            height: 60%;
+        }
+        .wraperNext{
+            height: 60%;
+        }
     }
-    @media (max-height:100px){
+    
+    @media (max-height:340px){
         section>section{
             display: none;
         }
         .conImgHover{display: none;}
-        hr{display: none;}
-    }
-    @media (max-width:668px) and (min-width:390px){
-        section>section>:first-child{
-            font-size: 20px;
+        hr{
+            display: none;
+        }
+        .conImgHover{
+            display: none;
+        }
+        section>section>div:first-child{
+            font-size: 30px;
             font-weight: 700;
         }
-        section>section>:nth-child(2){
+        section>section>div:nth-child(2){
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        .wraper, .wraperNext{
+            height: 80%;
+            align-self: center;
+            justify-content: center;
+            bottom: -10px;
+        }
+
+        .container >.wraper>a{
+            font-size: 10px;
+            height: 100%;
+        }
+        .container >.wraperNext>a{
+            font-size: 10px;
+            height: 100%;
+        }
+    
+    }
+    @media (max-width:668px) and (min-width:450px){
+        section>section>div:first-child{
+            font-size: 18px;
+            font-weight: 700;
+        }
+        section>section>div:nth-child(2){
             font-size: 10px;
             font-weight: 300;
         }
 
+
     }
-    @media (max-width:390px) {
-        section>section>:first-child{
+    
+
+    @media (max-width:450px) {
+        section>section>div:first-child{
             font-size: 15px;
             font-weight: 700;
         }
-        section>section>:nth-child(2){
+        section>section>div:nth-child(2){
             font-size: 10px;
             font-weight: 300;
         }
+        .container>a{
+
+            left: -30px;
+
+        }
 
     }
-    @media (max-width:265px) {
-        section>section>:first-child{
+    @media (max-width:350px) {
+        section>section>div:first-child{
             font-size: 8px;
             font-weight: 700;
         }
-        section>section>:nth-child(2){
+        section>section>div:nth-child(2){
             font-size: 6px;
             font-weight: 300;
         }
-        .container a{
+        .container>a{
+
+            left: -25px;
+
+        }
+
+
+    }
+    @media (max-height:625px) and (min-height:545px){
+        section>section>div:first-child{
+            font-size: 15px;
+            font-weight: 700;
+        }
+        section>section>div:nth-child(2){
             font-size: 10px;
+            font-weight: 300;
+        }
+        .container >.wraper>a{
+            font-size: 13px;
+        }
+        .container >.wraperNext>a{
+            font-size: 13px;
         }
 
     }
-    @media (max-width:800px){
-        .container{
-            border: 1px solid white;
+    @media (max-height:545px) and (min-height:500px){
+        section>section>div:first-child{
+            font-size: 15px;
+            font-weight: 700;
+        }
+        section>section>div:nth-child(2){
+            font-size: 8px;
+            font-weight: 300;
+        }
+        .container >.wraper>a{
+            font-size: 10px;
+        }
+        .container >.wraperNext>a{
+            font-size: 10px;
+        }
+
+
+    }
+    @media (max-height:500px) and (min-height:427px){
+        section>section>div:first-child{
+            font-size: 10px;
+            font-weight: 700;
+        }
+        section>section>div:nth-child(2){
+            font-size: 5px;
+            font-weight: 300;
+        }
+        .container >.wraper>a{
+            font-size: 8px;
+        }
+        .container >.wraperNext>a{
+            font-size: 8px;
+        }
+
+    }
+    @media (max-width:200px){
+        .container >.wraper>a{
+            font-size: 5px;
+
+        }
+        .container >.wraperNext>a{
+            font-size: 5px;
+
         }
     }
+    @media(max-width:170px){
+        .container{
+            display: none;
+        }
+
+    }
+    @media(max-height:135px){
+        .container{
+            display: none;
+        }
+    }
+
+
+
+
     @media(max-width:510px){
         .conImgHover img{
             width: 13vh;
 
         }
+        
+
 
     }
+    @media (max-width:800px){
+        .container>a{
 
+            font-size: 10px; 
+            left: 15px;   
+             
 
-
-
-    
-
+        }
+        
+    }
 
 
 </style>
@@ -344,5 +604,38 @@ for (let i = 0; i < overlays.length; i++) {
     history.back();
   });
 }
+
+const back=document.querySelector(".container>a");
+const wraper=document.querySelector(".wraper>a:first-child");
+const text1=document.querySelector('section>section>div:first-child');
+
+function checkHashInURL() {
+  return window.location.hash ;
+}
+
+
+function updateBackgroundColor() {
+  if (checkHashInURL()=== '#Individu') {
+    back.style.left = '16px';
+    text1.innerHTML='Form Penilaian Individu LKKMPD';
+
+
+  } else {
+    back.style.left = '-20%';
+    text1.innerHTML='Form Penilaian LKKMPD';
+  }
+}
+
+
+updateBackgroundColor();
+
+window.addEventListener('hashchange', function() {
+
+  updateBackgroundColor();
+});
+
+
+
+
 </script>
 </html>
