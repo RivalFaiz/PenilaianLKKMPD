@@ -51,7 +51,10 @@
 
             
             <div class="wraper" id="Individu">
-                <a class="KELOMPOK" href="#Individu">        
+                <a class="KELOMPOK" href="#Individu"> 
+                    <div class="arrow">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </div>       
                     <div class="individu">Penilaian Individu</div>
                 </a>
             
@@ -203,7 +206,26 @@
         font-weight: 300;
         white-space: pre-wrap; /* Memungkinkan pemisahan kata jika tidak cukup ruang di satu baris */
         word-wrap: break-word;
+        overflow: hidden;
+
     }
+    .container>.wraper>a:first-child{
+        position: relative;
+
+
+    }
+    .arrow{
+        position: absolute;
+        right: -100px;
+        top: 0;
+        bottom: 0;
+        z-index: 12;
+        display: flex;
+        align-items: center;
+        transition: 0.2s;
+
+    }
+
 
     .wraper:target{
         left: -100%;
@@ -218,6 +240,9 @@
         transition: 0.2s;
         transform: translateY(8px);
         background-color: #6453c4;
+    }
+    .container>.wraper>a:hover .arrow{
+        right:20px;
     }
     .container>.wraper>a:active{
         background-color:#41379f;
@@ -263,7 +288,7 @@
         background-color: #6453c4;
     }
     .container>.wraperNext>a:active{
-        background-color:#41379f;
+        background-color:#531a60;
         background-position: center;
         transition: 0;
     }
