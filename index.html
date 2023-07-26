@@ -135,6 +135,13 @@ const wraperNextHariH=document.querySelector('.wraperNextHariH')
 const back=document.querySelector(".container>a");
 const text1=document.querySelector('section>section>div:first-child>span');
 
+back.addEventListener('click', function(e) {
+    history.back();
+    e.preventDefault();
+
+})
+
+
 function checkHashInURL() {
   return window.location.hash ;
 }
@@ -163,9 +170,8 @@ function updateBackgroundColor1() {
     wraperUtama.style.left='0'
     wraperNextPra.style.left='100%';
 }
-
-
 }
+
 updateBackgroundColor1();
 
 window.addEventListener('hashchange', function() {
