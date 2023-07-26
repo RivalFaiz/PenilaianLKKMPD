@@ -328,20 +328,22 @@
         .conImgHover{
             display: none;
         }
-        section>section>div:first-child{
-            font-size: 30px;
-            font-weight: 700;
-        }
-        section>section>div:nth-child(2){
-            font-size: 20px;
-            font-weight: 300;
-        }
 
         .container>div{
-            height: 80%;
+            height: 70%;
             align-self: center;
             justify-content: center;
-            bottom: -10px;
+            bottom: 0;
+
+            background-color: #ffffff;
+            justify-self: center;
+
+        }
+        .container>.wraperNextHariH{
+            bottom: 0;
+        }
+        .container>.wraperNext{
+            bottom: 0;
         }
 
         .container >div>a{
