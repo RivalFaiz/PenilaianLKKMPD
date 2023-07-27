@@ -248,9 +248,7 @@
         font-weight: 300;
     }
     .overlay{
-        position: fixed;
-        top: 0;
-        left: 0;
+        position:fixed;
         z-index: 999;
         display: flex;
         align-items: center;
@@ -259,27 +257,24 @@
         height: 0;
         overflow: hidden;
         background-color: rgba(0,0,0,0.6);
-        transition: 0.5s;
-      
-        
+
+             
       }
-      .overlay img{
+
+      .overlay>img{
         border-radius: 10px;
         background-image:linear-gradient(to top, rgba(0,0,0,1),rgba(0,0,0,0)) ;
         cursor: default;
-        border: white 2px solid;
+        border: white 0px solid;
+        transform: scale(0);
+        width:min(70vw,80vh);
+        height:min(70vw,80vh);
+        transition: 0.4s;
+
       }
-      .overlay:target{
-        right: 0;
-        bottom: 0;
-        width: auto;
-        height: auto;
-      }
-      .overlay:target img{
-        width:50vw;
-        transition: 0.2s ease-in;
-        pointer-events: none;
-      }
+
+
+
 
     
       .LKMMPD{
@@ -335,6 +330,7 @@
             justify-content: center;
             bottom: 0;
 
+            background-color: #ffffff;
             justify-self: center;
 
         }
@@ -444,47 +440,30 @@
         .container >div>a{
             font-size: 8px;
         }
-
-
     }
     @media (max-width:200px){
         .container >div>a{
             font-size: 5px;
-
         }
-
     }
     @media(max-width:170px){
         .container{
             display: none;
         }
-
     }
     @media(max-height:135px){
         .container{
             display: none;
         }
     }
-
-
-
-
     @media(max-width:510px){
         .conImgHover img{
             width: 13vh;
-
         }
-        
-
-
     }
     @media (max-width:800px){
         .container>a{
-
             font-size: 10px; 
-            left: 15px;   
-             
-
-        }
-        
+            left: 15px;                
+        }        
     }
