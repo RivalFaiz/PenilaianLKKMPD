@@ -14,11 +14,11 @@
         <div class="container">
         
             <section class="foto">
-                <a href="#lkmmpd">
+                <a href="#lkmmpd" id="logo" title="Klik untuk melihat Logo">
                 
                     <div class="conImgHover">
             
-                        <img src="gmbr/logolkm1.jpg" alt="LOGO LKKMD">
+                        <img src="gmbr/logolkm1.jpg" alt="LOGO LKMMPD">
                         
                         <div class="imgHover">
                             <div class="LKMMPD">LKMMPD</div> 
@@ -36,8 +36,8 @@
             </section>
 
 
-            <section class="overlay" id="lkmmpd">                        
-                <img src="gmbr/logolkm1.jpg" alt="LOGO LKMMPD">                
+            <section class="overlay" id="lkmmpd" title="Klik di Area background untuk keluar">                        
+                <img src="gmbr/logolkm1.jpg" alt="LOGO LKMMPD" title="Logo Cakra Abhipraya">              
             </section>
 
 
@@ -121,13 +121,56 @@
 
 </style>
 <script>
-    const overlays = document.querySelectorAll('.overlay');
+const overlays = document.querySelector('.overlay');
 
-for (let i = 0; i < overlays.length; i++) {
-  overlays[i].addEventListener('click', function() {
-    history.back();
-  });
-}
+const logo=document.getElementById('logo');
+
+const imgOverlay=document.querySelector('.overlay>img')
+
+imgOverlay.addEventListener('click',function(event){
+    event.stopPropagation()
+})
+imgOverlay.addEventListener('mouseenter',function(event){
+    event.stopPropagation()
+})
+
+
+logo.addEventListener('click',function(event){
+    overlays.style.right= '0';
+    overlays.style.bottom='0';
+    overlays.style.top="0";
+    overlays.style.left="0";
+    overlays.style.width= 'auto';
+    overlays.style.height= 'auto';
+    imgOverlay.style.transform='scale(1)'
+    overlays.style.transform='scale(1)'
+    imgOverlay.style.transition='0.2s'
+
+
+    event.preventDefault();
+});
+
+
+
+overlays.addEventListener('click', function() {
+
+
+
+ 
+    imgOverlay.style.transform='scale(0)'
+    overlays.style.transform='scale(0)'
+    imgOverlay.style.transition='0.2s'
+
+
+
+
+});
+overlays.addEventListener('mouseenter', function() {
+  overlays.style.cursor = 'pointer';
+
+});
+
+
 
 const wraperUtama=document.querySelector(".wraper");
 const wraperNextPra=document.querySelector('.wraperNext');
