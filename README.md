@@ -1,1 +1,1 @@
-# RivalFaiz.github.io
+# github.io
