@@ -72,7 +72,7 @@
     .container{
         display: flex;
         margin: 0 auto;
-        border: 0.0001px solid #ffffff;
+        border: 0.005px solid #ffffff;
         width: clamp(100px,70vw,800px);
         height: 80vh;
         flex-direction: column;
