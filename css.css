@@ -72,9 +72,9 @@
     .container{
         display: flex;
         margin: 0 auto;
-        border: 0.005px solid #ffffff;
+        border: 0.003px solid #ffffff;
         width: clamp(100px,70vw,800px);
-        height: 80vh;
+        height: 88vh;
         flex-direction: column;
         justify-content: center;
         padding-left: 30px;
@@ -116,7 +116,7 @@
         transition: 0.2s;
         background-image: none;
         background-position: center;
-        font-size: clamp(10px,2.5vw,15px);
+        font-size: clamp(8px,2vw,13px);
         font-weight: 300;
         white-space: pre-wrap; /* Memungkinkan pemisahan kata jika tidak cukup ruang di satu baris */
         word-wrap: break-word;
@@ -403,11 +403,9 @@
             font-weight: 300;
         }
         .container >div>a{
-            font-size: 13px;
+            font-size: 11px;
         }
-        .container >div>a{
-            font-size: 13px;
-        }
+
 
     }
     @media (max-height:545px) and (min-height:500px){
@@ -420,7 +418,7 @@
             font-weight: 300;
         }
         .container >div>a{
-            font-size: 10px;
+            font-size: 8px;
         }
 
 
@@ -436,12 +434,12 @@
             font-weight: 300;
         }
         .container >div>a{
-            font-size: 8px;
+            font-size: 6px;
         }
     }
     @media (max-width:200px){
         .container >div>a{
-            font-size: 5px;
+            font-size: 3px;
         }
     }
     @media(max-width:170px){
