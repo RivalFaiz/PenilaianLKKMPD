@@ -10,7 +10,7 @@
         margin: 0;
         padding: 0;
         font-family: 'poppins';
-        background-image:url('gmbr/Wallpaper green.jpeg');
+        background-image:url('gmbr/bg5r.jpg');
         background-repeat:no-repeat;
         background-position: center;
         background-size: cover;
@@ -28,7 +28,7 @@
         color:rgba(255,255,255,0.7);
         padding: 10px 10px 10px 10px;
         aspect-ratio: 1;
-        background-color: #3961aa;  
+        background-color: #517dce;  
         font-size: 17px;     
         z-index: 100; 
         border-radius: 1.3vh;
@@ -104,7 +104,7 @@
     .container>div>a{
         width: 100%;
         height: 9vh;
-        background-color: #7762ea;
+        background-color: #306798;
         border-radius: 3.8vh;
         margin-top: min(10px,2vh);
         margin-bottom: min(10px,2vh);
@@ -154,7 +154,7 @@
         box-shadow: none;
         transition: 0.2s;
         transform: translateY(8px);
-        background-color: #6453c4;
+        background-color: #10588c;
     }
 
     .container>.wraper>a:hover .arrow{
@@ -166,12 +166,10 @@
     .container>div>a:hover .x{
         right:20px;
     }
-
     .container>div>a:active{
-        background-color:#41379f;
+        background-color:#214883;
         background-position: center;
     }
-
     .wraperNextHariH{
         left: -100%;
     }
