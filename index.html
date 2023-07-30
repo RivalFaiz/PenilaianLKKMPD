@@ -15,6 +15,9 @@
     <div class="conAll">
     
         <div class="container">
+            <section class="bg" title="Klik untuk merubah background">
+                <input type="checkbox">
+            </section>
 
 
         
@@ -212,6 +215,30 @@ overlays.addEventListener('mouseenter', function() {
 });
 
 
+// Periksa apakah ada nilai sebelumnya di Local Storage
+const bg = document.querySelector('input');
+const isCheckboxChecked = localStorage.getItem('bgCheckboxChecked');
+
+// Jika ada nilai sebelumnya, atur status checkbox sesuai
+if (isCheckboxChecked === 'true') {
+    bg.checked = true;
+    document.body.style.backgroundImage = 'url("gmbr/bg5r.jpg")';
+}
+
+// Tambahkan event listener untuk mendengarkan perubahan status checkbox
+bg.addEventListener('change', function() {
+    if (bg.checked) {
+    localStorage.setItem('bgCheckboxChecked', 'true');
+    document.body.style.backgroundImage = 'url("gmbr/bg5r.jpg")';
+    } else {
+    localStorage.setItem('bgCheckboxChecked', 'false');
+    document.body.style.backgroundImage = 'url("gmbr/bg4.jpg")';
+    }
+});
+
+
+
+
 
 const wraperUtama=document.querySelector(".wraper");
 const wraperNextPra=document.querySelector('.wraperNext');
@@ -231,7 +258,7 @@ function checkHashInURL() {
 }
 
 
-function updateBackgroundColor1() {
+function updatePerubahan() {
   if (checkHashInURL()=== '#Pra-Hari_H') {
     back.style.left = '16px';
     text1.innerHTML='Pra Hari H ';
@@ -256,11 +283,11 @@ function updateBackgroundColor1() {
 }
 }
 
-updateBackgroundColor1();
+updatePerubahan();
 
 window.addEventListener('hashchange', function() {
 
-  updateBackgroundColor1();
+  updatePerubahan();
 });
 
 
