@@ -40,25 +40,91 @@ overlays.addEventListener('mouseenter', function() {
 });
 
 // Ini mengatur Tampilan tombol yang buat ganti bg
+// const tombolWraper = document.querySelectorAll('.container > div > div');
 const bg = document.querySelector('input');
 const isCheckboxChecked = localStorage.getItem('bgCheckboxChecked');
 const tombol = document.querySelectorAll('.container > div > div > a');
+const bungkusTombol = document.querySelectorAll('.container > div > div ');
+
+
+const oren="0px min(9px,3vh) 2px #c99118 , 1px 2px 10px black";
+const ungu="0px min(9px, 3vh) rgb(63, 40, 68), 1px 2px 10px black";
+
 
 bg.addEventListener('change', function() {
-    if (bg.checked) {
-        localStorage.setItem('bgCheckboxChecked', 'true');
-        document.body.style.backgroundImage = 'url("gmbr/bg5r.jpg")';
-        tombol.forEach(element => {
-            element.style.boxShadow = '0px min(9px, 3vh) rgb(63, 40, 68), 1px 2px 10px black';
-        });
+    localStorage.setItem('bgCheckboxChecked', this.checked);
+  });
+  
+  // Cek apakah ada nilai sebelumnya di Local Storage saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', function() {
+    const isCheckboxChecked = localStorage.getItem('bgCheckboxChecked');
+    if (isCheckboxChecked === 'true') {
+      bg.checked = true;
     } else {
-        localStorage.setItem('bgCheckboxChecked', 'false');
-        document.body.style.backgroundImage = 'url("gmbr/bg4.jpg")';
-        tombol.forEach(element => {
-            element.style.boxShadow = '0px min(9px, 3vh) 2px #c99118, 1px 2px 10px black';
-        });
+      bg.checked = false;
     }
+  });
+
+
+
+  
+// Cek apakah ada nilai sebelumnya di Local Storage saat halaman dimuat
+document.addEventListener('DOMContentLoaded', function() {
+const isCheckboxChecked = localStorage.getItem('bgCheckboxChecked');
+if (isCheckboxChecked === 'true') {
+    bg.checked = true;
+    document.body.style.backgroundImage = "url('gmbr/bg5r.jpg')";
+    tombol.forEach(e=>{
+        e.style.boxShadow = ungu;
+    })
+} else {
+    bg.checked = false;
+    document.body.style.backgroundImage = "url('gmbr/bg4.jpg')";
+    tombol.forEach(e=>{
+        e.style.boxShadow = oren;
+    })
+}
 });
+
+// Simpan nilai checkbox ke Local Storage saat nilai berubah
+bg.addEventListener('change', function() {
+localStorage.setItem('bgCheckboxChecked', this.checked);
+if (this.checked) {
+    document.body.style.backgroundImage = "url('gmbr/bg5r.jpg')";
+    tombol.forEach(e=>{
+        e.style.boxShadow = ungu;
+    })
+} else {
+    document.body.style.backgroundImage = "url('gmbr/bg4.jpg')";
+    tombol.forEach(e=>{
+        e.style.boxShadow = oren;
+    })
+}
+});
+
+bungkusTombol.forEach(element => {
+    element.addEventListener('mouseenter', function() {
+        // Mengubah box-shadow dari child pertama dari elemen yang memicu event
+        element.children[0].style.boxShadow='none';
+    });
+    element.addEventListener('mouseleave', function() {
+    // Saat mouse keluar (mouseleave), periksa status checkbox
+    if (bg.checked) {
+        element.children[0].style.boxShadow = ungu;
+    }else{
+        element.children[0].style.boxShadow=oren;
+    }
+    });
+      
+});
+
+
+
+
+
+
+// Jika ada nilai sebelumnya, atur status checkbox sesuai
+
 
 // Ini mengatur pergerakan tombol sheet
 const wraperUtama=document.querySelector(".wraper");
@@ -110,3 +176,4 @@ updatePerubahan();
 window.addEventListener('hashchange', function() {
   updatePerubahan();
 });
+
